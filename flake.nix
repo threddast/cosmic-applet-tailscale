@@ -62,6 +62,8 @@
               # rust
               cargo-check.enable = true;
               clippy.enable = true;
+              clippy.packageOverrides.cargo = pkgs.cargo;
+              clippy.packageOverrides.clippy = pkgs.clippy;
               rustfmt.enable = true;
             };
           };

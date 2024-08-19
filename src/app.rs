@@ -13,7 +13,7 @@ use crate::fl;
 /// This is the struct that represents your application.
 /// It is used to define the data that will be used by your application.
 #[derive(Default)]
-pub struct YourApp {
+pub struct CosmicAppletTailscale {
     /// Application state which is managed by the COSMIC runtime.
     core: Core,
     /// The popup id.
@@ -40,14 +40,14 @@ pub enum Message {
 /// - `Flags` is the data that your application needs to use before it starts.
 /// - `Message` is the enum that contains all the possible variants that your application will need to transmit messages.
 /// - `APP_ID` is the unique identifier of your application.
-impl Application for YourApp {
+impl Application for CosmicAppletTailscale {
     type Executor = cosmic::executor::Default;
 
     type Flags = ();
 
     type Message = Message;
 
-    const APP_ID: &'static str = "com.example.CosmicAppletTemplate";
+    const APP_ID: &'static str = "com.github.threddast.CosmicAppletTailscale";
 
     fn core(&self) -> &Core {
         &self.core
@@ -65,7 +65,7 @@ impl Application for YourApp {
     /// - `flags` is used to pass in any data that your application needs to use before it starts.
     /// - `Command` type is used to send messages to your application. `Command::none()` can be used to send no messages to your application.
     fn init(core: Core, _flags: Self::Flags) -> (Self, Command<Self::Message>) {
-        let app = YourApp {
+        let app = CosmicAppletTailscale {
             core,
             ..Default::default()
         };
